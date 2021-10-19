@@ -1,0 +1,8 @@
+FROM mongo:4-focal
+RUN apt-get update && apt-get install -y \
+    restic \
+    curl \
+    && restic self-update \
+    && rm -rf /var/lib/apt/lists/*
+ENTRYPOINT [ ]
+CMD [ "/bin/bash" ]
